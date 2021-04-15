@@ -9,7 +9,7 @@ module.exports = class HelloCommand extends Command {
 			aliases: ['bonjour', 'hi'],
 			description: 'Replies with a hello message.',
 			clientPermissions: ['SEND_MESSAGES'],
-			userPermissions: ['ADMINISTRATOR'],
+			userPermissions: ['SEND_MESSAGES'],
       guildOnly: true,
       throttling: {
         usages: 1,
