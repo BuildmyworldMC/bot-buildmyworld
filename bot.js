@@ -14,10 +14,5 @@ client.registry
     ])
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
-client.once('ready', () => {
-  console.log(`Je suis prêt !`);
-});
+client.login('TOKEN');
 
-client.on('error', console.error);
-
-client.login('');

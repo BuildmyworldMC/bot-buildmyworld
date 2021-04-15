@@ -9,6 +9,7 @@
   "private": true,
   "dependencies": {
     "discord.js": "^12.5.3",
-    "discord.js-commando": "https://github.com/discordjs/Commando.git"
+    "discord.js-commando": "https://github.com/discordjs/Commando.git",
+    "winston": "^3.3.3"
   }
 }
