@@ -1,0 +1,14 @@
+{
+  "name": "bot-buildmyworld",
+  "version": "0.0.1",
+  "description": "Discord bot for buildmyworld project",
+  "main": "index.js",
+  "repository": "https://github.com/ORN-Fox/bot-buildmyworld.git",
+  "author": "ORN_Fox",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "discord.js-commando": "https://github.com/discordjs/Commando.git"
+  }
+}
