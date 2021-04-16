@@ -11,7 +11,13 @@ for (const k in envConfig) {
 const client = new CommandoClient({
 	commandPrefix: '?',
 	owner: process.env.BOT_OWNER_ID,
-  disableMentions: 'everyone'
+  disableMentions: 'everyone',
+  presence: {
+    activity: {
+      name: `buildmyworld.fr`, // message de présence
+      type: 'WATCHING' // type d'activité
+    }
+  }
 });
 
 client.registry
