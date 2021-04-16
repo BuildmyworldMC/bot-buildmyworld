@@ -20,11 +20,13 @@ module.exports = class QuickerzCommand extends Command {
 					key: 'weekMode',
 					prompt: "Demander les disponibilités pour la semaine ?",
 					type: 'boolean',
+					default: false
 				},
         {
 					key: 'weekendMode',
 					prompt: "Demander les disponibilités pour la weekend ?",
 					type: 'boolean',
+					default: false
 				},
 				{
 					key: 'weekTime',
