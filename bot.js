@@ -17,8 +17,9 @@ const client = new CommandoClient({
 client.registry
   .registerDefaultTypes()
   .registerGroups([
-      ['divers', 'Divers'], // [groupCmd, groupTitle]
-    ])
+    ['divers', 'Divers'], // [groupCmd, groupTitle]
+    ['quickerz', 'Quickerz']
+  ])
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
 client.login(process.env.BOT_TOKEN);
