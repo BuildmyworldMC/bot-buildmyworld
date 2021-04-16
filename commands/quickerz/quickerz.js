@@ -7,7 +7,7 @@ module.exports = class QuickerzCommand extends Command {
 			memberName: 'dispo',
 			group: 'quickerz',
 			aliases: [],
-			description: 'Displays a content requesting availability to Quickerz',
+			description: 'Affiche le message demandant les disponibilités des Quickerz',
 			clientPermissions: ['SEND_MESSAGES'],
 			userPermissions: ['SEND_MESSAGES'],
       guildOnly: true,

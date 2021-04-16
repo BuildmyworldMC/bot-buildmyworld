@@ -7,7 +7,7 @@ module.exports = class HelloCommand extends Command {
 			memberName: 'hello',
 			group: 'divers',
 			aliases: ['bonjour', 'hi'],
-			description: 'Replies with a hello message.',
+			description: 'Le bot dira bonjour !',
 			clientPermissions: ['SEND_MESSAGES'],
 			userPermissions: ['SEND_MESSAGES'],
       guildOnly: true,
