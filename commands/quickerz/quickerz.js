@@ -30,12 +30,12 @@ module.exports = class QuickerzCommand extends Command {
 				},
 				{
 					key: 'weekTime',
-					prompt: "Date et heure pour la semaine ?",
+					prompt: "Heure et minute pour la semaine ?",
 					type: 'string',
 				},
 				{
 					key: 'weekendTime',
-					prompt: "Date et heure pour le weekend ?",
+					prompt: "Heure et minute pour le weekend ?",
 					type: 'string',
 				}
 			],
