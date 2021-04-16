@@ -6,10 +6,10 @@ const Discord = require('discord.js')
 module.exports = class HelpCommand extends Command {
     constructor(client) {
         super(client, {
-            name: 'help',
-            group: 'bot',
+            name: 'aide',
+            group: 'miscellaneous',
             memberName: 'help',
-            aliases: ['h'],
+            aliases: ['h', 'help'],
             description: 'Affiche la liste des commandes disponibles.',
             clientPermissions: ['SEND_MESSAGES'],
             args: [

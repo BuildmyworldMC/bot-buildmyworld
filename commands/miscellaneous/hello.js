@@ -3,17 +3,17 @@ const { Command } = require('discord.js-commando');
 module.exports = class HelloCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'hello',
+			name: 'bonjour',
 			memberName: 'hello',
-			group: 'divers',
-			aliases: ['bonjour', 'hi'],
+			group: 'miscellaneous',
+			aliases: ['salut', 'hello', 'hi'],
 			description: 'Le bot dira bonjour !',
 			clientPermissions: ['SEND_MESSAGES'],
 			userPermissions: ['SEND_MESSAGES'],
       guildOnly: true,
       throttling: {
         usages: 1,
-        duration: 10,
+        duration: 30,
       },
 		});
 	}

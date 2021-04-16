@@ -17,9 +17,9 @@ const client = new CommandoClient({
 client.registry
   .registerDefaultTypes()
   .registerGroups([
-    ['divers', 'Divers'], // [groupCmd, groupTitle]
-    ['bot', 'Bot'],
-    ['quickerz', 'Quickerz']
+    ['buildmychunk', 'Buildmychunk'], // [groupCmd, groupTitle]
+    ['quickerz', 'Quickerz'],
+    ['miscellaneous', 'Divers']
   ])
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
