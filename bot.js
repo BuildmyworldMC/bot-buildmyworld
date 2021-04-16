@@ -18,6 +18,7 @@ client.registry
   .registerDefaultTypes()
   .registerGroups([
     ['divers', 'Divers'], // [groupCmd, groupTitle]
+    ['bot', 'Bot'],
     ['quickerz', 'Quickerz']
   ])
   .registerCommandsIn(path.join(__dirname, 'commands'));
