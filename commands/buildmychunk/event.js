@@ -42,19 +42,6 @@ class BuildmychunkEvent {
     this.participations = [];
   }
 
-	ifNoEqualityFinded(participations, currentParticipation)
-	{
-		for (let participation of participations) {
-			if (participation.name != currentParticipation.name) {
-				if (participation.score == currentParticipation.score) {
-					return false;
-				}
-			}
-		}
-
-		return true;
-	}
-
   computeResult() {
 		let participations = this.participations;
 
@@ -67,19 +54,21 @@ class BuildmychunkEvent {
 		});
 
 		let positionIndex = 1;
+		let previousScore = participations[0].score;
 
-		participations.forEach((participation) => {
-			participation.position = positionIndex;
-
-			if (this.ifNoEqualityFinded(participations, participation)) {
+		participations.forEach((participation, index) => {
+			if (participation.score < previousScore) {
+				previousScore = participation.score;
 				positionIndex++;
 			}
+
+			participation.position = positionIndex;
 		});
 
     let result = `Résultat de l'événement ${this.title}`;
 
     participations.forEach((participation) => {
-      result += `\n${participation.getPositionEmoji()} - ${participation.name} : ${participation.score} pt${participation.score > 1 ? 's' : ''}`;
+      result += `\n${participation.getPositionEmoji()} ${participation.name} : ${participation.score} pt${participation.score > 1 ? 's' : ''}`;
     });
 
     return result;
