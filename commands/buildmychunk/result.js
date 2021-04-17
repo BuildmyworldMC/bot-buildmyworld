@@ -3,11 +3,11 @@ const { Command } = require('discord.js-commando');
 module.exports = class BuildmychunkResultCommand extends Command {
 	constructor(client) {
 		super(client, {
-			name: 'result',
+			name: 'resultat',
 			memberName: 'result',
 			group: 'buildmychunk',
-			aliases: [],
-			description: 'Display resultat of votes for target event',
+			aliases: ['classement', 'podium', 'score'],
+			description: "Affiche le résultat de l'événement ciblé",
 			clientPermissions: ['SEND_MESSAGES'],
 			userPermissions: ['SEND_MESSAGES'],
       guildOnly: true,
@@ -20,16 +20,15 @@ module.exports = class BuildmychunkResultCommand extends Command {
 					key: 'eventName',
 					prompt: "Nom de l'événement (ex: buildmychunk-YYYY-MM) ?",
 					type: 'string',
+          validate: eventName => {
+            return /^buildmychunk-[0-9]{4}-[0-9]{2}$/i.test(eventName);
+          }
 				}
 			],
 		});
 	}
 
 	async run(msg, { eventName }) {
-    msg.say(`Résultat de l'événement ${eventName} :
-	1 - ORN_Fox / Cézalios 45 pts
-	2 - Nasgo / MaxDesro 43 pts
-	3 - Raphifola / Infernaton 41 pts
-	4 - Fallecraft / LeDivineEnfant 40 pts`);
+    msg.say(this.client.eventsBuildmychunk[0].computeResult());
 	}
 };
