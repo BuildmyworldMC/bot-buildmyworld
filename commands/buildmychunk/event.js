@@ -7,7 +7,7 @@ module.exports = class BuildmychunkEventCommand extends Command {
 			memberName: 'event',
 			group: 'buildmychunk',
 			aliases: [],
-			description: "Créer un nouvel événement Buildmychunk afin d'ajouter les participations par la suite",
+			description: "Crée un nouvel événement Buildmychunk afin d'ajouter les participations par la suite",
 			clientPermissions: ['SEND_MESSAGES'],
 			userPermissions: ['ADMINISTRATOR'],
       guildOnly: true,
