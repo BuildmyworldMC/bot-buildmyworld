@@ -20,6 +20,8 @@ const client = new CommandoClient({
   }
 });
 
+client.eventsBuildmychunk = [];
+
 client.registry
   .registerDefaultTypes()
   .registerGroups([
