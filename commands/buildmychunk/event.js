@@ -49,9 +49,8 @@ class BuildmychunkEvent {
       participation.score = participation.computeScore();
     });
 
-    // TODO this sort is not applied !
     participations.sort((firstParticipation, secondParticipation) => {
-			secondParticipation.score > firstParticipation.score;
+			return secondParticipation.score > firstParticipation.score ? 1 : -1;
 		});
 
     let result = `Résultat de l'événement ${this.title}`;
