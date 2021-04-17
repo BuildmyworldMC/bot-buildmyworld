@@ -59,6 +59,7 @@ class BuildmychunkParticipation {
 	constructor (name, srcMessage) {
 		this.name = name;
 		this.srcMessage = srcMessage;
+		this.position = 0;
 		this.score = 0;
 	}
 
@@ -72,5 +73,21 @@ class BuildmychunkParticipation {
 		score += (this.srcMessage.reactions.cache.get(fivePointsReaction).count - 1) * 5;
 
 		return score;
+	}
+
+	getPositionEmoji() {
+		switch (this.position) {
+			case 1:
+				return '🥇';
+
+			case 2:
+				return '🥈';
+
+			case 3:
+				return '🥉';
+
+			default:
+				return '🏅';
+		}
 	}
 }
