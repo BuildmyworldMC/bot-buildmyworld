@@ -9,7 +9,7 @@ module.exports = class QuickerzCommand extends Command {
 			aliases: [],
 			description: 'Affiche le message demandant les disponibilités des Quickerz',
 			clientPermissions: ['SEND_MESSAGES'],
-			userPermissions: ['SEND_MESSAGES'],
+			userPermissions: ['ADMINISTRATOR'],
       guildOnly: true,
       throttling: {
         usages: 1,

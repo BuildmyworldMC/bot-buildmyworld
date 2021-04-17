@@ -15,7 +15,7 @@ module.exports = class BuildmychunkVoteCommand extends Command {
 			aliases: [],
 			description: 'Affiche un message de participation pour que les gens puisse voté sur ce message',
 			clientPermissions: ['SEND_MESSAGES'],
-			userPermissions: ['SEND_MESSAGES'],
+			userPermissions: ['ADMINISTRATOR'],
       guildOnly: true,
       throttling: {
         usages: 1,

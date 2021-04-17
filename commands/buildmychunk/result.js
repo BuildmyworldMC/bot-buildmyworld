@@ -9,7 +9,7 @@ module.exports = class BuildmychunkResultCommand extends Command {
 			aliases: ['classement', 'podium', 'score'],
 			description: "Affiche le résultat de l'événement ciblé",
 			clientPermissions: ['SEND_MESSAGES'],
-			userPermissions: ['SEND_MESSAGES'],
+			userPermissions: ['ADMINISTRATOR'],
       guildOnly: true,
       throttling: {
         usages: 1,

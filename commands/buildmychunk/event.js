@@ -9,7 +9,7 @@ module.exports = class BuildmychunkEventCommand extends Command {
 			aliases: [],
 			description: "Créer un nouvel événement Buildmychunk afin d'ajouter les participations par la suite",
 			clientPermissions: ['SEND_MESSAGES'],
-			userPermissions: ['SEND_MESSAGES'],
+			userPermissions: ['ADMINISTRATOR'],
       guildOnly: true,
       throttling: {
         usages: 1,
