@@ -18,24 +18,24 @@ module.exports = class QuickerzCommand extends Command {
 			args: [
 				{
 					key: 'weekMode',
-					prompt: "Demander les disponibilités pour la semaine ?",
+					prompt: 'Demander les disponibilités pour la semaine ?',
 					type: 'boolean',
 					default: false
 				},
         {
 					key: 'weekendMode',
-					prompt: "Demander les disponibilités pour la weekend ?",
+					prompt: 'Demander les disponibilités pour la weekend ?',
 					type: 'boolean',
 					default: false
 				},
 				{
 					key: 'weekTime',
-					prompt: "Heure et minute pour la semaine ?",
+					prompt: 'Heure et minute pour la semaine ?',
 					type: 'string',
 				},
 				{
 					key: 'weekendTime',
-					prompt: "Heure et minute pour le weekend ?",
+					prompt: 'Heure et minute pour le weekend ?',
 					type: 'string',
 				}
 			],
@@ -43,7 +43,7 @@ module.exports = class QuickerzCommand extends Command {
 	}
 
 	computeFrTime(time) {
-		let splitedTime = time.split("h");
+		let splitedTime = time.split('h');
 
 		return `${parseInt(splitedTime[0]) + 6}h${splitedTime[1]}`;
 	}
@@ -69,16 +69,16 @@ module.exports = class QuickerzCommand extends Command {
     const replyMsg = await msg.say(content);
 
 		if (weekMode) {
-			replyMsg.react("🇱");
-			replyMsg.react("🇲");
-			replyMsg.react("🇼");
-			replyMsg.react("🇯");
-			replyMsg.react("🇻");
+			replyMsg.react('🇱');
+			replyMsg.react('🇲');
+			replyMsg.react('🇼');
+			replyMsg.react('🇯');
+			replyMsg.react('🇻');
 		}
 
 		if (weekendMode) {
-			replyMsg.react("🇸");
-			replyMsg.react("🇩");
+			replyMsg.react('🇸');
+			replyMsg.react('🇩');
 		}
 	}
 };

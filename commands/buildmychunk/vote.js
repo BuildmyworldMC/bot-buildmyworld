@@ -32,7 +32,7 @@ module.exports = class BuildmychunkVoteCommand extends Command {
 				},
 				{
 					key: 'participantName',
-					prompt: "Nom du ou des participant(s) ?",
+					prompt: 'Nom du ou des participant(s) ?',
 					type: 'string',
 					validate: participantName => {
 			      if (participantName.length < 101 && participantName.length > 1) return true;
