@@ -1,6 +1,6 @@
 {
   "name": "bot-buildmyworld",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Discord bot for buildmyworld project",
   "main": "bot.js",
   "repository": "https://github.com/ORN-Fox/bot-buildmyworld.git",
