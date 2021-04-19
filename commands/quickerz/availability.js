@@ -59,14 +59,12 @@ module.exports = class QuickerzCommand extends Command {
     }
 
     if (weekMode && weekendMode) {
-      content += ` Et`;
+      content += ` (W pour mercredi). Et`;
     }
 
     if (weekendMode) {
       content += ` pour le weekend dès ${this.computeFrTime(weekendTime)} :flag_fr: (${weekendTime} :flag_ca:) ?`;
     }
-
-    content += " (W pour mercredi)`";
 
     const replyMsg = await msg.say(content);
 
