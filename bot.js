@@ -14,8 +14,8 @@ const client = new CommandoClient({
   disableMentions: 'everyone',
   presence: {
     activity: {
-      name: `buildmyworld.fr`, // message de présence
-      type: 'WATCHING' // type d'activité
+      name: `buildmyworld.fr`,
+      type: 'WATCHING'
     }
   }
 });
