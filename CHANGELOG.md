@@ -1,5 +1,10 @@
 # Changelog
 
+v1.0.2
+------
+- Fixed: missing commands prefix in reamde
+
+
 v1.0.1
 -------
 - Fixed: dispo cmd not mentionning role on post message
