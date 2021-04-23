@@ -1,7 +1,7 @@
 const { stripIndents, oneLine } = require('common-tags');
 const { disambiguation } = require('discord.js-commando/src/util');
 const { Command } = require('discord.js-commando');
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 
 module.exports = class HelpCommand extends Command {
     constructor(client) {
@@ -27,9 +27,7 @@ module.exports = class HelpCommand extends Command {
         const groups = this.client.registry.groups;
         const commands = this.client.registry.findCommands(args.command, false, msg);
         const showAll = args.command && args.command.toLowerCase() === 'all';
-
-        const embed = new Discord.MessageEmbed()
-            .setColor('BLUE');
+        const embed = new Discord.MessageEmbed().setColor('BLUE');
 
         if(args.command && !showAll) {
             if(commands.length === 1) {
@@ -55,15 +53,15 @@ module.exports = class HelpCommand extends Command {
 
                 embed
                     .setAuthor(commands[0].name.toUpperCase())
-                    .setDescription(help.replace(/ or /g, ' ou '))
+                    .setDescription(help.replace(/ or /g, ' ou '));
             } else if(commands.length > 15) {
                 embed.setDescription('Plusieurs commandes peuvent correspondrent, merci d\'être plus précis.')
             } else if(commands.length > 1) {
-                embed.setDescription(disambiguation(commands, 'commands').replace(/ or /g, ' ou '))
+                embed.setDescription(disambiguation(commands, 'commands').replace(/ or /g, ' ou '));
             } else {
                 embed.setDescription(`Cette commande n'existe pas. Utilisez ${msg.usage(
                     null, msg.channel.type === 'dm' ? null : undefined, msg.channel.type === 'dm' ? null : undefined
-                )} pour voir la liste de toutes les commandes`.replace(/ or /g, ' ou '))
+                )} pour voir la liste de toutes les commandes`.replace(/ or /g, ' ou '));
             }
         } else {
             embed
@@ -85,10 +83,10 @@ module.exports = class HelpCommand extends Command {
                             .map(cmd => `\`${cmd.name}\`: ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
                         }
 						`).join('\n\n')
-                    }`.replace(/ or /g, ' ou '))
+                    }`.replace(/ or /g, ' ou '));
             ;
         }
 
-        return msg.say(embed)
+        return msg.say(embed);
     }
 };

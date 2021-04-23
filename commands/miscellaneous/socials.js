@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 
 module.exports = class SocialsCommand extends Command {
 	constructor(client) {
