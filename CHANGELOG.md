@@ -2,6 +2,7 @@
 
 v1.0.2
 ------
+- Added: `npm start` shortcut in package.json for start bot more easily
 - Fixed: missing commands prefix in reamde
 
 
@@ -13,8 +14,8 @@ v1.0.1
 
 v1.0.0
 -------
-- Creation of bot
-- Add many commands
+- Bot creation from zero
+- Added many commands
  - Buildmychunk group (`?event` / `?regle` / `?resultat` / `?vote`)
  - Quickerz group (`?dispo`)
  - Divers group (`?bonjour` / `?aide` / `?reseaux`)

@@ -12,5 +12,8 @@
     "discord.js-commando": "https://github.com/discordjs/Commando.git",
     "dotenv": "^8.2.0",
     "winston": "^3.3.3"
+  },
+  "scripts": {
+    "start": "node bot.js"
   }
 }
