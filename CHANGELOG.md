@@ -3,7 +3,8 @@
 v1.0.2
 ------
 - Added: `npm start` shortcut in package.json for start bot more easily
-- Fixed: missing commands prefix in reamde
+- Added: `?server` for display server IP, version and restriction
+- Fixed: missing commands prefix in README
 
 
 v1.0.1
