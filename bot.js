@@ -32,3 +32,9 @@ client.registry
   .registerCommandsIn(path.join(__dirname, 'commands'));
 
 client.login(process.env.BOT_TOKEN);
+
+client.on('message', message => {
+  if ((message.author.id === process.env.BOT_OWNER_ID) && (message.content.startsWith('?'))) {
+    message.delete({ timeout: 500 });
+  }
+});

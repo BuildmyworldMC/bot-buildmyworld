@@ -3,6 +3,7 @@
 v1.0.2
 ------
 - Added: `npm start` shortcut in package.json for start bot more easily
+- Added: message send by user for execute command is delete after 500 ms for keep chat clean
 - Added: `?server` for display server IP, version and restriction
 - Fixed: missing commands prefix in README
 
