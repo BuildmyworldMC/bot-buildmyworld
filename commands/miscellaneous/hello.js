@@ -19,6 +19,6 @@ module.exports = class HelloCommand extends Command {
 	}
 
 	async run(msg) {
-    msg.say(`Bonjour, je suis ${this.client.user.tag}, le bot officiel du projet Buildmyworld !`);
+    msg.say(`Bonjour ! Je suis ${this.client.user.tag}, le bot officiel du projet Buildmyworld !`);
 	}
 };
