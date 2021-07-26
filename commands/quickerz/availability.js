@@ -51,8 +51,9 @@ module.exports = class QuickerzCommand extends Command {
 	async run(msg, { weekMode, weekendMode, weekTime, weekendTime }) {
 		const quickerzRoleId = '668240840556019741';
 		const builderRoleId = '321732484398055435';
+		const apprenticeBuilderRoleId = '807391085638189147';
 
-    let content = `<@&${quickerzRoleId}> <@&${builderRoleId}> Quels sont vos disponibilités`;
+    let content = `<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> Quels sont vos disponibilités`;
 
     if (weekMode) {
       content += ` pour la semaine a ${this.computeFrTime(weekTime)} :flag_fr: (${weekTime} :flag_ca:) ?`;
