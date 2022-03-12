@@ -24,7 +24,7 @@ module.exports = class MinecraftCommand extends Command {
 			.setColor('#17a2b8')
     	.setTitle(`Serveur Minecraft`)
 			.setDescription(`:link: IP : play.buildmyworld.fr
-:jigsaw: Version : 1.16.2 Vanilla
+:jigsaw: Version : 1.17.1 Vanilla
 :warning: Restriction : Liste blanche (whitelist) activé`);
 
     msg.say(embed);

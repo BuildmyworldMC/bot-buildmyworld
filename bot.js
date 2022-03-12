@@ -34,7 +34,7 @@ client.registry
 client.login(process.env.BOT_TOKEN);
 
 client.on('message', message => {
-  if (message.author.id === process.env.BOT_OWNER_ID && message.content.startsWith('?') && !message.content.startsWith('?vote'))) {
+  if (message.author.id === process.env.BOT_OWNER_ID && message.content.startsWith('?') && !message.content.startsWith('?vote')) {
     message.delete({ timeout: 500 });
   }
 });
