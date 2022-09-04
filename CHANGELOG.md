@@ -1,10 +1,16 @@
 # Changelog
 
+v2.0.0
+------
+- Refactor bot for new bot structure and use slash command
+
+
 v1.0.4
 ------
 - Added : Usage section in readme for list all commands
 - Updated : Reorder readme for better UX
 - Fixed: Dependancies vulnerabilities
+
 
 v1.0.3
 ------
