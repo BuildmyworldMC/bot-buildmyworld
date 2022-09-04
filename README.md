@@ -1,6 +1,32 @@
 # Bot BuildMyWorld
 
-## Use bot
+## Usage
+
+### Miscellaneous
+
+| Cmd | Alias | Args | Description | Access level |
+|-----|-------|------|-------------|:------------:|
+| hello | salut, bonjour, hi | Say hello | Admin |
+| help | h, aide | `<command?>` | Display global help, use `<command>` for display specific help | Admin |
+| socials | reseaux, liens, site, youtube, ... | | Display socials networks informations | Admin |
+| server | minecraft, ip, version, serveur | | Display server informations | Admin |
+
+### Quickerz
+
+| Cmd | Alias | Args | Description | Access level |
+|-----|-------|------|-------------|:------------:|
+| dispo | | `<weekMode>`, `<weekendMode>`, `<weekTime>`, `<weekendTime>` | Display availabilities pickers | Admin |
+
+### Buildmychunks
+
+| Cmd | Alias | Args | Description | Access level |
+|-----|-------|------|-------------|:------------:|
+| event | | `<eventName>` | Create event with event name given | Admin |
+| vote | | `<eventName>`, `<participantName>` | Create vote for event with participant name given | Admin |
+| result | resultat, classement, podium, score | `<eventName>` | Compute and display result for event name given | Admin |
+| rules | regle | | Display rules for explain vote event system | Admin |
+
+## Configuration
 
 1. retrieve dependancies with command: `yarn` in console to level of `package.json` file
 2. Duplicate `.env.example` file for create `.env` file
@@ -14,6 +40,6 @@ Prerequisites to have on your PC
 * NodeJS ^15.x
 * Yarn ^1.0.
 
-After retrieve prerequisites, see instructions in **Use bot** section
+After retrieve prerequisites, see instructions in **Configuration** section and after **Usage**.
 
 Enjoy
