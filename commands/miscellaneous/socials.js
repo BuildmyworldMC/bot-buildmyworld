@@ -1,7 +1,6 @@
 const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
 
-// inside a command, event listener, etc.
-const exampleEmbed = new EmbedBuilder()
+const embed = new EmbedBuilder()
 	.setColor(0x17a2b8)
 	.setTitle('Réseaux du projet')
 	.setDescription(`:link: Discord : https://discord.gg/taCzCMe
@@ -17,6 +16,6 @@ module.exports = {
 		.setName('socials')
 		.setDescription('Display socials links'),
 	async execute(interaction) {
-		await interaction.reply({ embeds: [exampleEmbed] });
+		await interaction.reply({ embeds: [embed] });
 	},
 };
