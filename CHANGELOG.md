@@ -1,5 +1,11 @@
 # Changelog
 
+v1.0.3
+- Added: add apprentice builder role in quickerz availabilities cmd
+- Updated: update project version to 1.17.1 in minecraft command
+- Fix: `?vote` message for execute command is delete, render is bad if use this command with join image
+
+
 v1.0.2
 ------
 - Added: `npm start` shortcut in package.json for start bot more easily
