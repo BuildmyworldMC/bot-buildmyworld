@@ -6,25 +6,25 @@
 
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
-| hello | salut, bonjour, hi | Say hello | Admin |
-| help | h, aide | | Display message for contact discord Staff for problem | Admin |
-| socials | reseaux, liens, site, youtube, ... | | Display socials networks informations | Admin |
-| server | minecraft, mc, ip, version, serveur | | Display server informations | Admin |
+| hello | bonjour | Say hello | Everyone |
+| help | aide | | Display message for contact discord Staff for problem | Everyone |
+| socials | reseaux | | Display socials networks informations | Everyone |
+| server | serveur | | Display server informations | Everyone |
 
 ### Quickerz
 
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
-| dispo | | `<weekmode>`, `<weekendmode>`, `<weektime>`, `<weekendtime>` | Display availabilities pickers | Admin |
+| availabilities | dispo | `<weekmode>`, `<weekendmode>`, `<weektime>`, `<weekendtime>` | Display availabilities pickers | Builders / Staff |
 
 ### Buildmychunks
 
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
-| event | | `<eventname>` | Create event with event name given | Admin |
-| vote | | `<eventname>`, `<participantname>` | Create vote for event with participant name given | Admin |
-| result | resultat, classement, podium, score | `<eventname>` | Compute and display result for event name given | Admin |
-| rules | regle | | Display rules for explain vote event system | Admin |
+| event | | `<eventname>` | Create event with event name given | Staff |
+| vote | | `<eventname>`, `<participantname>` | Create vote for event with participant name given | Staff |
+| result | resultat | `<eventname>` | Compute and display result for event name given | Staff |
+| rules | regles | | Display rules for explain vote event system | Staff |
 
 ## Configuration
 

@@ -3,6 +3,8 @@
 v2.0.0
 ------
 - Refactor bot for new bot structure and use slash command
+- Added: Localize commands (English, French)
+- Updated: update project version to 1.19.0 in server command
 
 
 v1.0.4
