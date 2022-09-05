@@ -1,76 +1,17 @@
-const { Command } = require('discord.js-commando');
+const { SlashCommandBuilder } = require('discord.js');
+const BuildmychunkEvent = require('../../models/buildmychunk/event.model.js');
 
-module.exports = class BuildmychunkEventCommand extends Command {
-	constructor(client) {
-		super(client, {
-			name: 'event',
-			memberName: 'event',
-			group: 'buildmychunk',
-			aliases: [],
-			description: "Crée un nouvel événement Buildmychunk afin d'ajouter les participations par la suite",
-			clientPermissions: ['SEND_MESSAGES'],
-			userPermissions: ['ADMINISTRATOR'],
-      guildOnly: true,
-      throttling: {
-        usages: 1,
-        duration: 60,
-      },
-			args: [
-				{
-					key: 'eventName',
-					prompt: "Nom de l'événement (ex: buildmychunk-YYYY-MM) ?",
-					type: 'string',
-          validate: eventName => {
-            return /^buildmychunk-[0-9]{4}-[0-9]{2}$/i.test(eventName);
-          }
-				}
-			],
-		});
-	}
+module.exports = {
+	data: new SlashCommandBuilder()
+    .setName('event')
+    .setDescription('Create new event')
+    .addStringOption(option => option.setName('eventname')
+        .setDescription('Event name (ex: buildmychunk-YYYY-MM) ?')
+        .setRequired(true)),
+  async execute(interaction) {
+		let eventName = interaction.options.getString('eventname');
 
-	async run(msg, { eventName }) {
-    this.client.eventsBuildmychunk = [new BuildmychunkEvent(eventName)];
-
-    msg.say(`Création de l'événement Buildmychunk ${eventName}, l'ajout des participations se fera avec la commande : \n \`?vote ${eventName} <nom des participant(s)>\``);
-	}
+    interaction.client.eventsBuildmychunk = [new BuildmychunkEvent(eventName)];
+    await interaction.reply(`Création de l'événement Buildmychunk ${eventName}, l'ajout des participations se fera avec la commande : \n \`/vote ${eventName} <nom des participant(s)>\``);
+  },
 };
-
-class BuildmychunkEvent {
-  constructor (eventName)
-  {
-    this.title = eventName;
-    this.participations = [];
-  }
-
-  computeResult() {
-		let participations = this.participations;
-
-    participations.forEach((participation) => {
-      participation.score = participation.computeScore();
-    });
-
-    participations.sort((firstParticipation, secondParticipation) => {
-			return secondParticipation.score > firstParticipation.score ? 1 : -1;
-		});
-
-		let positionIndex = 1;
-		let previousScore = participations[0].score;
-
-		participations.forEach((participation, index) => {
-			if (participation.score < previousScore) {
-				previousScore = participation.score;
-				positionIndex++;
-			}
-
-			participation.position = positionIndex;
-		});
-
-    let result = `Résultat de l'événement ${this.title}`;
-
-    participations.forEach((participation) => {
-      result += `\n${participation.getPositionEmoji()} ${participation.name} : ${participation.score} pt${participation.score > 1 ? 's' : ''}`;
-    });
-
-    return result;
-  }
-}
