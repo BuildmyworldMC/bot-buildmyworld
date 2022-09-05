@@ -6,7 +6,7 @@
 
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
-| hello | bonjour | Say hello | Everyone |
+| hello | bonjour | Say hello | | Everyone |
 | help | aide | | Display message for contact discord Staff for problem | Everyone |
 | socials | reseaux | | Display socials networks informations | Everyone |
 | server | serveur | | Display server informations | Everyone |
