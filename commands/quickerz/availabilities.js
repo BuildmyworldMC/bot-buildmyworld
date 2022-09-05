@@ -6,22 +6,22 @@ function computeFrTime(time) {
 	return `${parseInt(splitedTime[0]) + 6}h${splitedTime[1]}`;
 };
 
-function computeMessage(weekMode, weekendMode, weekTime, weekendTime ) {
+function computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime ) {
 	const quickerzRoleId = '668240840556019741';
 	const builderRoleId = '321732484398055435';
 	const apprenticeBuilderRoleId = '807391085638189147';
 
   let message = `<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> Quels sont vos disponibilités`;
 
-  if (weekMode) {
+  if (weekEnabled) {
     message += ` pour la semaine a ${computeFrTime(weekTime)} :flag_fr: (${weekTime} :flag_ca:) ?`;
   }
 
-  if (weekMode && weekendMode) {
+  if (weekEnabled && weekendEnabled) {
     message += ` (W pour mercredi). Et`;
   }
 
-  if (weekendMode) {
+  if (weekendEnabled) {
     message += ` pour le weekend dès ${computeFrTime(weekendTime)} :flag_fr: (${weekendTime} :flag_ca:) ?`;
   }
 
@@ -31,14 +31,33 @@ function computeMessage(weekMode, weekendMode, weekTime, weekendTime ) {
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('availabilities')
-		.setDescription('Display availabilities picker for Builder and Quickerz'),
+		.setDescription('Display availabilities picker for Builder and Quickerz')
+		.addBooleanOption(option =>
+			option.setName('weekenabled')
+				.setDescription('Enabled/Disabled availabilities for week on picker')
+				.setRequired(true))
+		.addBooleanOption(option =>
+			option.setName('weekendenabled')
+				.setDescription('Enabled/Disabled availabilities for weekend on picker')
+				.setRequired(true))
+		.addStringOption(option =>
+			option.setName('weektime')
+				.setDescription('Week time display on message')
+				.setRequired(true))
+		.addStringOption(option =>
+			option.setName('weekendtime')
+				.setDescription('Weekend time display on message')
+				.setRequired(true)),
 	async execute(interaction) {
-		let weekMode = true;
-		let weekendMode = true;
+		let weekEnabled = interaction.options.getBoolean('weekenabled');
+		let weekendEnabled = interaction.options.getBoolean('weekendenabled');
 
-		const message = await interaction.reply({ content: computeMessage(true, true, '8h30', '9h'), fetchReply: true });
+		let weekTime = interaction.options.getString('weektime');
+		let weekendTime = interaction.options.getString('weekendtime');
 
-		if (weekMode) {
+		const message = await interaction.reply({ content: computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime), fetchReply: true });
+
+		if (weekEnabled) {
 			message.react('🇱');
 			message.react('🇲');
 			message.react('🇼');
@@ -46,7 +65,7 @@ module.exports = {
 			message.react('🇻');
 		}
 
-		if (weekendMode) {
+		if (weekendEnabled) {
 			message.react('🇸');
 			message.react('🇩');
 		}
