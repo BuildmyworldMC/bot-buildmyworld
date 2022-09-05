@@ -26,6 +26,10 @@ module.exports = {
 		let eventName = interaction.options.getString('eventname');
 		let participantName = interaction.options.getString('participantname');
 
+		if (!interaction.client.eventsBuildmychunk) {
+			return;
+		}
+
 		const message = await interaction.reply({ content: `Participation pour ${participantName}`, fetchReply: true });
 		message.react(BuildmychunkParticipation.onePointReaction);
 		message.react(BuildmychunkParticipation.twoPointsReaction);

@@ -20,6 +20,10 @@ module.exports = {
 	async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
 
+		if (!interaction.client.eventsBuildmychunk) {
+			return;
+		}
+
 		await interaction.reply(await interaction.client.eventsBuildmychunk[0].computeResult(interaction.client));
 	},
 };
