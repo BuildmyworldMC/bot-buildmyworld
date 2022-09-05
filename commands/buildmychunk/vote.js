@@ -5,13 +5,22 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('vote')
 		.setDescription('Create a participation and display the voting system')
+		.setDescriptionLocalizations({
+			fr: 'Crée une participation et affiche le systeme de vote',
+		})
 		.addStringOption(option =>
 			option.setName('eventname')
-				.setDescription('Event name (ex: buildmychunk-YYYY-MM)')
+				.setDescription('Event name (ex: buildmychunk-YYYY-MM) ?')
+				.setDescriptionLocalizations({
+					fr: "Nom de l'événement (ex: buildmychunk-YYYY-MM) ?",
+				})
 				.setRequired(true))
 			.addStringOption(option =>
 				option.setName('participantname')
-					.setDescription('Participant name')
+					.setDescription('Participant name ?')
+					.setDescriptionLocalizations({
+						fr: 'Nom du participant ?',
+					})
 					.setRequired(true)),
 	async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');

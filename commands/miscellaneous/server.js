@@ -9,7 +9,13 @@ const embed = new EmbedBuilder()
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('server')
-		.setDescription('Display server informations'),
+		.setNameLocalizations({
+			fr: 'serveur',
+		})
+		.setDescription('Display server informations')
+		.setDescriptionLocalizations({
+			fr: 'Affiche les informations du serveur',
+		}),
 	async execute(interaction) {
 		await interaction.reply({ embeds: [embed] });
 	},

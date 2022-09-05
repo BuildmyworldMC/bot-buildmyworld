@@ -4,14 +4,20 @@ const BuildmychunkEvent = require('../../models/buildmychunk/event.model.js');
 module.exports = {
 	data: new SlashCommandBuilder()
     .setName('event')
-    .setDescription('Create new event')
+    .setDescription('Create event')
+		.setDescriptionLocalizations({
+			fr: 'Créer un événement',
+		})
     .addStringOption(option => option.setName('eventname')
         .setDescription('Event name (ex: buildmychunk-YYYY-MM) ?')
+				.setDescriptionLocalizations({
+					fr: "Nom de l'évenement (ex: buildmychunk-YYYY-MM) ?",
+				})
         .setRequired(true)),
   async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
 
     interaction.client.eventsBuildmychunk = [new BuildmychunkEvent(eventName)];
-    await interaction.reply(`Création de l'événement Buildmychunk ${eventName}, l'ajout des participations se fera avec la commande : \n \`/vote ${eventName} <nom des participant(s)>\``);
+    await interaction.reply(`Creation de l'evenement Buildmychunk ${eventName}, l'ajout des participations se fera avec la commande : \n \`/vote ${eventName} <nom des participant(s)>\``);
   },
 };

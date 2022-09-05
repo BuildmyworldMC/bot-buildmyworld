@@ -2,7 +2,7 @@ const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
 
 const embed = new EmbedBuilder()
 	.setColor(0x17a2b8)
-	.setTitle('Réseaux du projet')
+	.setTitle('Reseaux du projet')
 	.setDescription(`:link: Discord : https://discord.gg/taCzCMe
 		:link: Site web : https://buildmyworld.fr/
 		:link: Youtube : https://www.youtube.com/channel/UCJxUW2ac4Kf7DWK9puSqBqg
@@ -14,7 +14,13 @@ const embed = new EmbedBuilder()
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('socials')
-		.setDescription('Display socials links'),
+		.setNameLocalizations({
+			fr: 'resaux',
+		})
+		.setDescription('Displays project networks')
+		.setDescriptionLocalizations({
+			fr: 'Affiche les reseaux du projet',
+		}),
 	async execute(interaction) {
 		await interaction.reply({ embeds: [embed] });
 	},

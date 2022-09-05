@@ -11,7 +11,7 @@ function computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime ) {
 	const builderRoleId = '321732484398055435';
 	const apprenticeBuilderRoleId = '807391085638189147';
 
-  let message = `<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> Quels sont vos disponibilités`;
+  let message = `<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> Quels sont vos disponibilites`;
 
   if (weekEnabled) {
     message += ` pour la semaine a ${computeFrTime(weekTime)} :flag_fr: (${weekTime} :flag_ca:) ?`;
@@ -22,7 +22,7 @@ function computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime ) {
   }
 
   if (weekendEnabled) {
-    message += ` pour le weekend dès ${computeFrTime(weekendTime)} :flag_fr: (${weekendTime} :flag_ca:) ?`;
+    message += ` pour le weekend des ${computeFrTime(weekendTime)} :flag_fr: (${weekendTime} :flag_ca:) ?`;
   }
 
 	return message;
@@ -31,22 +31,40 @@ function computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime ) {
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('availabilities')
-		.setDescription('Display availabilities picker for Builder and Quickerz')
+		.setNameLocalizations({
+			fr: 'dispo',
+		})
+		.setDescription('Display availabilities picker for Builders and Quickerz')
+		.setDescriptionLocalizations({
+			fr: 'Affiche le message demandant les disponibilités des Quickerz et Batiesseurs',
+		})
 		.addBooleanOption(option =>
 			option.setName('weekenabled')
-				.setDescription('Enabled/Disabled availabilities for week on picker')
+				.setDescription('Enables/Disables availabilities for the week')
+				.setDescriptionLocalizations({
+					fr: 'Active/Désactive les disponibilités pour la semaine',
+				})
 				.setRequired(true))
 		.addBooleanOption(option =>
 			option.setName('weekendenabled')
-				.setDescription('Enabled/Disabled availabilities for weekend on picker')
+				.setDescription('Enables/Disables availabilities for the weekend')
+				.setDescriptionLocalizations({
+					fr: 'Active/Désactive les disponibilités pour la fin de semaine',
+				})
 				.setRequired(true))
 		.addStringOption(option =>
 			option.setName('weektime')
 				.setDescription('Week time display on message')
+				.setDescriptionLocalizations({
+					fr: 'Heure affiche pour la semaine',
+				})
 				.setRequired(true))
 		.addStringOption(option =>
 			option.setName('weekendtime')
 				.setDescription('Weekend time display on message')
+				.setDescriptionLocalizations({
+					fr: 'Heure affiche pour la fin de semaine',
+				})
 				.setRequired(true)),
 	async execute(interaction) {
 		let weekEnabled = interaction.options.getBoolean('weekenabled');

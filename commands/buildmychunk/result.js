@@ -3,10 +3,19 @@ const { SlashCommandBuilder } = require('discord.js');
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('result')
-		.setDescription('Compute and display event result')
+		.setNameLocalizations({
+			fr: 'resultat'
+		})
+		.setDescription('Shows the results of the votes')
+		.setDescriptionLocalizations({
+			fr: 'Affiche le résultat des votes',
+		})
 		.addStringOption(option =>
 			option.setName('eventname')
 				.setDescription('Target event name (ex: buildmychunk-YYYY-MM)')
+				.setDescriptionLocalizations({
+					fr: "Nom de l 'événement (ex: buildmychunk-YYYY-MM) ?",
+				})
 				.setRequired(true)),
 	async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
