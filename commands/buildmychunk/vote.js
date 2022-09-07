@@ -26,7 +26,7 @@ module.exports = {
 		let eventName = interaction.options.getString('eventname');
 		let participantName = interaction.options.getString('participantname');
 
-		if (!interaction.client.eventsBuildmychunk) {
+		if (!interaction.client.events || !interaction.client.events[eventName]) {
 			return;
 		}
 
@@ -37,6 +37,6 @@ module.exports = {
 		message.react(BuildmychunkParticipation.fourPointsReaction);
 		message.react(BuildmychunkParticipation.fivePointsReaction);
 
-		interaction.client.eventsBuildmychunk[0].participations.push(new BuildmychunkParticipation(participantName, message));
+		interaction.client.events[eventName].participations.push(new BuildmychunkParticipation(participantName, message));
 	},
 };

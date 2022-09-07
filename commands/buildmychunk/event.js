@@ -17,7 +17,11 @@ module.exports = {
   async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
 
-    interaction.client.eventsBuildmychunk = [new BuildmychunkEvent(eventName)];
+		if (interaction.client.events[eventName]) {
+			return; // Prevent event override
+		}
+
+    interaction.client.events[eventName] = new BuildmychunkEvent(eventName);
     await interaction.reply(`Creation de l'evenement Buildmychunk ${eventName}, l'ajout des participations se fera avec la commande : \n \`/vote ${eventName} <nom des participant(s)>\``);
   },
 };
