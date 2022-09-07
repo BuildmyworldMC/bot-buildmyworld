@@ -1,5 +1,11 @@
 # Changelog
 
+v2.0.1
+------
+- Updated: Refactor events management for support crud event on multiple events
+- Fixed: It is possible to erase an event by creating it and causing potential problems
+
+
 v2.0.0
 ------
 - Refactor bot for new bot structure and use slash command
