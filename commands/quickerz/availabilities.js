@@ -75,17 +75,22 @@ module.exports = {
 
 		const message = await interaction.reply({ content: computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime), fetchReply: true });
 
-		if (weekEnabled) {
-			message.react('🇱');
-			message.react('🇲');
-			message.react('🇼');
-			message.react('🇯');
-			message.react('🇻');
+		try {
+			if (weekEnabled) {
+				await message.react('🇱');
+				await message.react('🇲');
+				await message.react('🇼');
+				await message.react('🇯');
+				await message.react('🇻');
+			}
+
+			if (weekendEnabled) {
+				await message.react('🇸');
+				await message.react('🇩');
+			}
+		} catch (error) {
+			console.error('One of the reaction failed to react:', error);
 		}
 
-		if (weekendEnabled) {
-			message.react('🇸');
-			message.react('🇩');
-		}
 	},
 };

@@ -31,11 +31,16 @@ module.exports = {
 		}
 
 		const message = await interaction.reply({ content: `Participation pour ${participantName}`, fetchReply: true });
-		message.react(BuildmychunkParticipation.onePointReaction);
-		message.react(BuildmychunkParticipation.twoPointsReaction);
-		message.react(BuildmychunkParticipation.threePointsReaction);
-		message.react(BuildmychunkParticipation.fourPointsReaction);
-		message.react(BuildmychunkParticipation.fivePointsReaction);
+
+		try {
+			await message.react(BuildmychunkParticipation.onePointReaction);
+			await message.react(BuildmychunkParticipation.twoPointsReaction);
+			await message.react(BuildmychunkParticipation.threePointsReaction);
+			await message.react(BuildmychunkParticipation.fourPointsReaction);
+			await message.react(BuildmychunkParticipation.fivePointsReaction);
+		} catch (error) {
+			console.error('One of the reaction failed to react:', error);
+		}
 
 		interaction.client.events[eventName].participations.push(new BuildmychunkParticipation(participantName, message));
 	},
