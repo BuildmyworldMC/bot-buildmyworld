@@ -7,6 +7,8 @@ module.exports = {
 
   	if (!command) return;
 
+		console.log(`LOG: Command /${interaction.commandName} is execute by ${interaction.user.username }#${interaction.user.discriminator}`);
+
   	try {
   		command.execute(interaction);
   	} catch (error) {

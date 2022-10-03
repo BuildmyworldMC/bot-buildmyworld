@@ -73,7 +73,10 @@ module.exports = {
 		let weekTime = interaction.options.getString('weektime');
 		let weekendTime = interaction.options.getString('weekendtime');
 
-		const message = await interaction.reply({ content: computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime), fetchReply: true });
+		let computedMessage = computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime);
+
+		const message = await interaction.reply({ content: computedMessage, fetchReply: true });
+		console.log(`LOG: Availabilities has displayed (trace: ${computedMessage})`);
 
 		try {
 			if (weekEnabled) {
@@ -89,7 +92,7 @@ module.exports = {
 				await message.react('🇩');
 			}
 		} catch (error) {
-			console.error('One of the reaction failed to react:', error);
+			console.error('ERROR: One of the reaction failed to react:', error);
 		}
 
 	},

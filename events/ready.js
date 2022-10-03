@@ -5,6 +5,6 @@ module.exports = {
 		// Init events dictionary
 		client.events = {};
 
-		console.log(`Ready! Logged in as ${client.user.tag}`);
+		console.log(`LOG: Ready! Logged in as ${client.user.tag}`);
 	},
 };
