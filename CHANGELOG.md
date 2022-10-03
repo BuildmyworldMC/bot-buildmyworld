@@ -1,5 +1,10 @@
 # Changelog
 
+v2.1.0
+------
+- Added: Logging system for improve error debug and log all actions
+
+
 v2.0.2
 ------
 - Updated: Updated all dependencies versions
