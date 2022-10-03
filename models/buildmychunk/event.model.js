@@ -1,6 +1,5 @@
 module.exports = class BuildmychunkEvent {
-  constructor (eventName)
-  {
+  constructor (eventName) {
     this.title = eventName;
     this.participations = [];
   }

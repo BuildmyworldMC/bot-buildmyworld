@@ -12,8 +12,7 @@ module.exports = class BuildmychunkParticipation {
 		this.score = 0;
 	}
 
-	async refreshMessage(client)
-	{
+	async refreshMessage(client) {
 		this.srcMessage = await client.channels.cache.get(this.srcMessage.channelId).messages.fetch(this.srcMessage.id);
 	}
 
