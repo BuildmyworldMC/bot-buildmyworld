@@ -1,5 +1,10 @@
 # Changelog
 
+v2.0.2
+------
+- Updated: Updated all dependencies versions
+
+
 v2.0.1
 ------
 - Updated: Refactor events management for support crud event on multiple events
