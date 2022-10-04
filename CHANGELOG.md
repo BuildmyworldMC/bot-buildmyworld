@@ -1,5 +1,11 @@
 # Changelog
 
+v2.1.1
+------
+- Updated: Update project version to 1.19.2 in server command
+- Updated: Bump minimal version of node in requirement to ^16.x
+
+
 v2.1.0
 ------
 - Added: Logging system for improve error debug and log all actions
