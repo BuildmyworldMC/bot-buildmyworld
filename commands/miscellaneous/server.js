@@ -4,7 +4,7 @@ const embed = new EmbedBuilder()
 	.setColor(0x17a2b8)
 	.setTitle(`Serveur Minecraft`)
 	.setDescription(`:link: IP : play.buildmyworld.fr
-:jigsaw: Version : 1.19.0 Vanilla`);
+:jigsaw: Version : 1.19.2 Vanilla`);
 
 module.exports = {
 	data: new SlashCommandBuilder()
