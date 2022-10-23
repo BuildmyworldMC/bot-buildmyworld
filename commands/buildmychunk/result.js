@@ -25,7 +25,9 @@ module.exports = {
 			return;
 		}
 
-		await interaction.reply(await interaction.client.events[eventName].computeResult(interaction.client));
+		await interaction.deferReply();
+	  const computedResultMessage = await interaction.client.events[eventName].computeResult(interaction.client)
+	  await interaction.editReply(computedResultMessage);
 		console.log(`LOG: Result for ${eventName} was displayed`);
 	},
 };
