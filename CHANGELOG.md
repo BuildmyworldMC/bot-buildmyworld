@@ -1,5 +1,10 @@
 # Changelog
 
+v2.1.2
+------
+- Fixed: Error `unknow interaction` on use `/result` command
+
+
 v2.1.1
 ------
 - Updated: Update project version to 1.19.2 in server command
