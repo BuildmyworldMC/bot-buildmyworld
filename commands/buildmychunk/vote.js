@@ -31,7 +31,8 @@ module.exports = {
 			return;
 		}
 
-		const message = await interaction.reply({ content: `Participation pour ${participantName}`, fetchReply: true });
+		await interaction.deferReply();
+		const message = await interaction.editReply({ content: `Participation pour ${participantName}`, fetchReply: true });
 		console.log(`LOG: Participation for ${participantName} has created in ${eventName} event`);
 
 		try {
