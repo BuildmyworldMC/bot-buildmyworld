@@ -21,13 +21,13 @@ module.exports = {
 		let eventName = interaction.options.getString('eventname');
 
 		if (!interaction.client.events || !interaction.client.events[eventName]) {
-			console.warn(`WARN: No event exist or ${eventName} event not exist !`);
+			console.warn(`WARN: No event exist or "${eventName}" event not exist !`);
 			return;
 		}
 
 		await interaction.deferReply();
-	  const computedResultMessage = await interaction.client.events[eventName].computeResult(interaction.client)
+	  const computedResultMessage = await interaction.client.events[eventName].computeResult(interaction.client);
 	  await interaction.editReply(computedResultMessage);
-		console.log(`LOG: Result for ${eventName} was displayed`);
+		console.log(`LOG: Result for "${eventName}" was displayed`);
 	},
 };

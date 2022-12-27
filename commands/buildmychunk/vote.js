@@ -27,13 +27,13 @@ module.exports = {
 		let participantName = interaction.options.getString('participantname');
 
 		if (!interaction.client.events || !interaction.client.events[eventName]) {
-			console.warn(`WARN: No event exist or ${eventName} event not exist !`);
+			console.warn(`WARN: No event exist or "${eventName}" event not exist !`);
 			return;
 		}
 
 		await interaction.deferReply();
 		const message = await interaction.editReply({ content: `Participation pour ${participantName}`, fetchReply: true });
-		console.log(`LOG: Participation for ${participantName} has created in ${eventName} event`);
+		console.log(`LOG: Participation for "${participantName}" has created in "${eventName}" event`);
 
 		try {
 			await message.react(BuildmychunkParticipation.onePointReaction);

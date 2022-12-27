@@ -18,12 +18,12 @@ module.exports = {
 		let eventName = interaction.options.getString('eventname');
 
 		if (interaction.client.events[eventName]) {
-			console.warn(`WARN: ${eventName} event was not overridden because is already exist !`);
+			console.warn(`WARN: "${eventName}" event was not overridden because is already exist !`);
 			return; // Prevent event override
 		}
 
     interaction.client.events[eventName] = new BuildmychunkEvent(eventName);
-    await interaction.reply(`Creation de l'evenement Buildmychunk ${eventName}, l'ajout des participations se fera avec la commande : \n \`/vote ${eventName} <nom des participant(s)>\``);
-		console.log(`LOG: ${eventName} event has created`);
+    await interaction.reply(`Creation de l'événement Buildmychunk "${eventName}" !`);
+		console.log(`LOG: "${eventName}" event has created`);
   },
 };
