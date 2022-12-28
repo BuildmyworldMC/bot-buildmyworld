@@ -15,7 +15,7 @@
 
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
-| availabilities | dispo | `<weekmode>`, `<weekendmode>`, `<weektime>`, `<weekendtime>` | Display availabilities pickers | Builders / Staff |
+| availabilities | dispo | `<weekmode>`, `<weekendmode>`, `<weektime>`, `<weekendtime>` | Display availabilities pickers | Staff |
 
 ### Buildmychunks
 
@@ -24,7 +24,7 @@
 | event | | `<eventname>` | Create event with event name given | Staff |
 | vote | | `<eventname>`, `<participantname>` | Create vote for event with participant name given | Staff |
 | result | resultat | `<eventname>` | Compute and display result for event name given | Staff |
-| rules | regles | | Display rules for explain vote event system | Staff |
+| rules | regles | | Display rules for explain vote event system | Everyone |
 
 ## Configuration
 
