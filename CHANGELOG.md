@@ -1,5 +1,11 @@
 # Changelog
 
+v2.2.0
+------
+- Added: Some commands are now restricted to certain roles
+- Fixed: Votes are no longer counted when retrieving the ranking
+
+
 v2.1.2
 ------
 - Fixed: Error `unknow interaction` on use `/result` command
