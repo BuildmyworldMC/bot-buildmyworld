@@ -1,5 +1,10 @@
 # Changelog
 
+v2.2.1
+------
+- Updated: Update discord.js and @discordjs/rest versions
+
+
 v2.2.0
 ------
 - Added: Some commands are now restricted to certain roles
