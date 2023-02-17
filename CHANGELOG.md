@@ -1,5 +1,11 @@
 # Changelog
 
+v2.2.2
+------
+- Updated: Update all dependencies
+- Fixed: "undici" Dependancy vulnerability
+
+
 v2.2.1
 ------
 - Updated: Update discord.js and @discordjs/rest versions
