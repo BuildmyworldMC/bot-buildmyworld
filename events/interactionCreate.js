@@ -32,12 +32,12 @@ module.exports = {
 
 		if (isAuthorized) {
 			try {
-	  		command.execute(interaction);
-				console.log(`LOG: Command /${interaction.commandName} is executed by ${interaction.user.username }#${interaction.user.discriminator}`);
-	  	} catch (error) {
-	  		console.error(error);
-	  		interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
-	  	}
+				command.execute(interaction);
+					console.log(`LOG: Command /${interaction.commandName} is executed by ${interaction.user.username }#${interaction.user.discriminator}`);
+			} catch (error) {
+				console.error(error);
+				interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
+			}
 		}
 	},
 };
