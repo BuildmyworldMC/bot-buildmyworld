@@ -21,6 +21,7 @@
 
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
+| registration | inscription | `<eventname>`| Opens registrations for an event | Staff |
 | event | | `<eventname>` | Create event with event name given | Staff |
 | vote | | `<eventname>`, `<participantname>` | Create vote for event with participant name given | Staff |
 | result | resultat | `<eventname>` | Compute and display result for event name given | Staff |
