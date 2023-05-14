@@ -38,7 +38,7 @@
 
 Prerequisites to have on your PC
 
-* NodeJS ^16.x
+* NodeJS ^18.x
 * Yarn ^1.0.
 
 After retrieve prerequisites, see instructions in **Configuration** section and after **Usage**.
