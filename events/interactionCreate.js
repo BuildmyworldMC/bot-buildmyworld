@@ -1,4 +1,7 @@
 const dotenv = require('dotenv');
+
+const logger = require('../logger.js');
+
 const env = dotenv.config().parsed;
 
 module.exports = {
@@ -10,7 +13,7 @@ module.exports = {
 
   	if (!command) return;
 
-		console.log(`LOG: Command /${interaction.commandName} is requested by ${interaction.user.username }#${interaction.user.discriminator}`);
+	  logger.log('info', `Command /${interaction.commandName} is requested by ${interaction.user.username }#${interaction.user.discriminator}`);
 
 		let isAuthorized = true;
 
@@ -24,7 +27,7 @@ module.exports = {
 				console.log(!interaction.member.roles.cache.has(env.BOT_STAFF_ROLE_ID));
 				if (!interaction.member.roles.cache.has(env.BOT_STAFF_ROLE_ID)) {
 					isAuthorized = false;
-					console.log("LOG: Restricted access");
+					logger.log('warning', 'Restricted access');
 					return;
 				}
 				break;
@@ -33,9 +36,9 @@ module.exports = {
 		if (isAuthorized) {
 			try {
 				command.execute(interaction);
-					console.log(`LOG: Command /${interaction.commandName} is executed by ${interaction.user.username }#${interaction.user.discriminator}`);
+				logger.log('info', `Command /${interaction.commandName} is executed by ${interaction.user.username }#${interaction.user.discriminator}`);
 			} catch (error) {
-				console.error(error);
+				logger.log('error', `${error}`);
 				interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
 			}
 		}

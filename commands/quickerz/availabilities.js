@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
+const logger = require('../../logger.js');
+
 function computeFrTime(time) {
 	let splitedTime = time.split('h');
 
@@ -76,7 +78,7 @@ module.exports = {
 		let computedMessage = computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime);
 
 		const message = await interaction.reply({ content: computedMessage, fetchReply: true });
-		console.log(`LOG: Availabilities has displayed (trace: ${computedMessage})`);
+		logger.log('info', `Availabilities has displayed (trace: ${computedMessage})`);
 
 		try {
 			if (weekEnabled) {
@@ -92,7 +94,7 @@ module.exports = {
 				await message.react('🇩');
 			}
 		} catch (error) {
-			console.error('ERROR: One of the reaction failed to react:', error);
+			logger.log('error', 'One of the reaction failed to react:', error);
 		}
 
 	},

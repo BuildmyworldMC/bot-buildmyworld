@@ -1,3 +1,5 @@
+const logger = require('../logger');
+
 module.exports = {
 	name: 'ready',
 	once: true,
@@ -5,6 +7,7 @@ module.exports = {
 		// Init events dictionary
 		client.events = {};
 
-		console.log(`LOG: Ready! Logged in as ${client.user.tag}`);
+		logger.log('info', '--------------START--------------');
+		logger.log('info', `Ready! Logged in as ${client.user.tag}`);
 	},
 };

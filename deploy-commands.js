@@ -4,6 +4,8 @@ const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord.js');
 const dotenv = require('dotenv');
 
+const logger = require('./logger.js');
+
 const env = dotenv.config().parsed;
 
 const commands = [];
@@ -27,5 +29,5 @@ for (const file of commandFiles) {
 const rest = new REST({ version: '10' }).setToken(env.BOT_TOKEN);
 
 rest.put(Routes.applicationGuildCommands(env.BOT_CLIENT_ID, env.BOT_GUILD_ID), { body: commands })
-	.then(() => console.log('Successfully registered application commands.'))
-	.catch(console.error);
+	.then(() => logger.log('info', 'Successfully registered application commands.'))
+	.catch((error) => logger.log('error', error));

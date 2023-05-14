@@ -1,5 +1,7 @@
 const { SlashCommandBuilder } = require('discord.js');
 
+const logger = require('../../logger.js');
+
 module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('result')
@@ -21,13 +23,13 @@ module.exports = {
 		let eventName = interaction.options.getString('eventname');
 
 		if (!interaction.client.events || !interaction.client.events[eventName]) {
-			console.warn(`WARN: No event exist or "${eventName}" event not exist !`);
+			logger.log('warn', `No event exist or "${eventName}" event not exist !`);
 			return;
 		}
 
 		await interaction.deferReply();
-	  const computedResultMessage = await interaction.client.events[eventName].computeResult(interaction.client);
-	  await interaction.editReply(computedResultMessage);
-		console.log(`LOG: Result for "${eventName}" was displayed`);
+	  	const computedResultMessage = await interaction.client.events[eventName].computeResult(interaction.client);
+	  	await interaction.editReply(computedResultMessage);
+		logger.log('info', `Result for "${eventName}" was displayed`);
 	},
 };

@@ -1,4 +1,6 @@
 const { SlashCommandBuilder } = require('discord.js');
+
+const logger = require('../../logger.js');
 const BuildmychunkEvent = require('../../models/buildmychunk/event.model.js');
 
 module.exports = {
@@ -18,12 +20,12 @@ module.exports = {
 		let eventName = interaction.options.getString('eventname');
 
 		if (interaction.client.events[eventName]) {
-			console.warn(`WARN: "${eventName}" event was not overridden because is already exist !`);
+			logger.log('warn', `"${eventName}" event was not overridden because is already exist !`);
 			return; // Prevent event override
 		}
 
     interaction.client.events[eventName] = new BuildmychunkEvent(eventName);
     await interaction.reply(`Creation de l'événement Buildmychunk "${eventName}" !`);
-		console.log(`LOG: "${eventName}" event has created`);
+		logger.log('info', `"${eventName}" event has created`);
   },
 };
