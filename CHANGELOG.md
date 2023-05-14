@@ -1,5 +1,11 @@
 # Changelog
 
+v2.3.1
+------
+- Added: Command `yarn deploy-commands` in package.json for deploy bot commands
+- Updated: Update NodeJS minimal version required (^16 to ^18)
+
+
 v2.3.0
 ------
 - Added: Save logs in file for improve logging system for fix and debug errors
