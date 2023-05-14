@@ -2,7 +2,7 @@ const dotenv = require('dotenv');
 const env = dotenv.config().parsed;
 
 const { createLogger, format, transports } = require('winston');
-const { combine, timestamp, label, prettyPrint } = format;
+const { combine, timestamp, prettyPrint } = format;
 
 const logger = createLogger({
 	level: 'info',
@@ -11,7 +11,7 @@ const logger = createLogger({
 		prettyPrint()
 	),
 	transports: [
-		new transports.File({ filename: './logs/logs.log' })
+		new transports.File({ filename: './logs/logs.log', handleExceptions: true })
 	]
 });
 
