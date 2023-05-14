@@ -1,5 +1,11 @@
 # Changelog
 
+v2.4.0
+------
+- Added: Command `/registration` for open event registration
+- Fixed: Remove useless args for `/hello` command in readme
+
+
 v2.3.1
 ------
 - Added: Command `yarn deploy-commands` in package.json for deploy bot commands
