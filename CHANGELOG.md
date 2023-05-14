@@ -1,5 +1,11 @@
 # Changelog
 
+v2.3.0
+------
+- Added: Save logs in file for improve logging system for fix and debug errors
+- Fixed: bad typo in message displayed on use rules command
+
+
 v2.2.2
 ------
 - Updated: Update all dependencies
