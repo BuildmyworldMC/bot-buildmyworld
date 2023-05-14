@@ -1,19 +1,23 @@
 const dotenv = require('dotenv');
 const env = dotenv.config().parsed;
 
-const winston = require('winston');
+const { createLogger, format, transports } = require('winston');
+const { combine, timestamp, label, prettyPrint } = format;
 
-const logger = winston.createLogger({
+const logger = createLogger({
 	level: 'info',
-	format: winston.format.json(),
+	format: combine(
+		timestamp(),
+		prettyPrint()
+	),
 	transports: [
-		new winston.transports.File({ filename: './logs/logs.log' })
+		new transports.File({ filename: './logs/logs.log' })
 	]
 });
 
 if (env.NODE_ENV !== 'production') {
-	logger.add(new winston.transports.Console({
-		format: winston.format.simple()
+	logger.add(new transports.Console({
+		format: format.simple()
 	}));
 }
 
