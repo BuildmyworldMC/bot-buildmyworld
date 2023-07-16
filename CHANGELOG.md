@@ -1,5 +1,11 @@
 # Changelog
 
+v2.4.1
+------
+- Updated: Update project version to 1.20.1 in `/server` command
+- Updated: Update all dependencies
+
+
 v2.4.0
 ------
 - Added: Command `/registration` for open event registration
