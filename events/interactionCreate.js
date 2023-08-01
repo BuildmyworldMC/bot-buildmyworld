@@ -20,6 +20,7 @@ module.exports = {
 		switch(interaction.commandName) {
 			// Quickerz
 			case 'availabilities':
+			case 'ping-record':
 			// Buildmychunk
 			case 'event':
 			case 'vote':
