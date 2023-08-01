@@ -25,6 +25,7 @@ module.exports = {
 			case 'event':
 			case 'vote':
 			case 'result':
+			case 'registration':
 				console.log(!interaction.member.roles.cache.has(env.BOT_STAFF_ROLE_ID));
 				if (!interaction.member.roles.cache.has(env.BOT_STAFF_ROLE_ID)) {
 					isAuthorized = false;
