@@ -1,5 +1,9 @@
 # Changelog
 
+v2.5.1
+- Updated: Command `/ping-record` is now renamed `/record` for simplicity
+
+
 v2.5.0
 
 - Added : Command `/ping-record` for display record start
