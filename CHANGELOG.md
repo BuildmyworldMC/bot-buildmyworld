@@ -1,5 +1,11 @@
 # Changelog
 
+v2.5.0
+
+- Added : Command `/ping-record` for display record start
+- Fixed : Command `/registration` is not restricted for Staff role
+
+
 v2.4.1
 ------
 - Updated: Update project version to 1.20.1 in `/server` command
