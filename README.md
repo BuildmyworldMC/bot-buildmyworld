@@ -16,7 +16,7 @@
 | Cmd | Alias | Args | Description | Access level |
 |-----|-------|------|-------------|:------------:|
 | availabilities | dispo | `<weekmode>`, `<weekendmode>`, `<weektime>`, `<weekendtime>` | Display availabilities pickers | Staff |
-| ping-record | | | Displays a message indicating the start of a shoot to Quickerz and Builders | Staff |
+| record | | | Displays a message indicating the start of a shoot to Quickerz and Builders | Staff |
 
 ### Buildmychunks
 

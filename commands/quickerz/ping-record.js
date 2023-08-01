@@ -4,9 +4,9 @@ const logger = require('../../logger.js');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('ping-record')
+		.setName('record')
 		.setNameLocalizations({
-			fr: 'ping-tournage',
+			fr: 'tournage',
 		})
 		.setDescription('Displays a message indicating the start of a shoot to Quickerz and Builders')
 		.setDescriptionLocalizations({
