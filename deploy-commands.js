@@ -26,8 +26,7 @@ for (const file of commandFiles) {
 	commands.push(command.data.toJSON());
 }
 
-const rest = new REST({ version: '10' }).setToken(env.BOT_TOKEN);
-
+const rest = new REST().setToken(env.BOT_TOKEN);
 rest.put(Routes.applicationGuildCommands(env.BOT_CLIENT_ID, env.BOT_GUILD_ID), { body: commands })
 	.then(() => logger.log('info', 'Successfully registered application commands.'))
 	.catch((error) => logger.log('error', error));
