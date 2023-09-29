@@ -1,5 +1,10 @@
 # Changelog
 
+v2.5.3
+- Updated: Update NodeJS minimal version required (^18 to ^20)
+- Fixed: Command `/ping-record` failed on execute
+
+
 v2.5.2
 - Updated: Command `/record` is now renamed `/ping-record` for simplicity
 - Updated: Added alias for command `/ping-record` in readme
