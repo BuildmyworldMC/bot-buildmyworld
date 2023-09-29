@@ -13,6 +13,10 @@ module.exports = {
 			fr: "Affiche un message indiquant le début d'un tournage aux Quickerz et Batiesseurs",
 		}),
 	async execute(interaction) {
+		const quickerzRoleId = '668240840556019741';
+		const builderRoleId = '321732484398055435';
+		const apprenticeBuilderRoleId = '807391085638189147';
+
 		await interaction.reply(`<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> Un tournage commence !`);
 	},
 };
