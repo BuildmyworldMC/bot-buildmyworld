@@ -1,22 +1,25 @@
 # Changelog
 
 v2.5.3
+------
 - Updated: Update NodeJS minimal version required (^18 to ^20)
 - Fixed: Command `/ping-record` failed on execute
 
 
 v2.5.2
+------
 - Updated: Command `/record` is now renamed `/ping-record` for simplicity
 - Updated: Added alias for command `/ping-record` in readme
 - Fixed: Command `/ping-record` file is bad formed and break command execution and commands deployments
 
 
 v2.5.1
+------
 - Updated: Command `/ping-record` is now renamed `/record` for simplicity
 
 
 v2.5.0
-
+------
 - Added : Command `/ping-record` for display record start
 - Fixed : Command `/registration` is not restricted for Staff role
 
