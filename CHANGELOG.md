@@ -1,5 +1,10 @@
 # Changelog
 
+v2.5.4
+------
+- Updated: Remove Utip in `/socials` because this project is end
+
+
 v2.5.3
 ------
 - Updated: Update NodeJS minimal version required (^18 to ^20)
