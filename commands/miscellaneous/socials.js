@@ -6,7 +6,6 @@ const embed = new EmbedBuilder()
 	.setDescription(`:link: Discord : https://discord.gg/taCzCMe
 		:link: Site web : https://buildmyworld.fr/
 		:link: Youtube : https://www.youtube.com/channel/UCJxUW2ac4Kf7DWK9puSqBqg
-		:link: Utip : https://utip.io/buildmyworld
 		:link: Twitter : https://twitter.com/BuildMyWorld1
 		:link: Facebook : https://www.facebook.com/buildmyworld/
 		:link: Instagram : https://www.instagram.com/teambuildmyworld`);
