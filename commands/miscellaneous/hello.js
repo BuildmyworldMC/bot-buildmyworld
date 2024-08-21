@@ -10,6 +10,7 @@ module.exports = {
 		.setDescriptionLocalizations({
 			fr: 'Le bot dis bonjour !',
 		}),
+
 	async execute(interaction) {
 		await interaction.reply('Bonjour ! Je suis Orion, le bot officiel du projet Buildmyworld !');
 	},

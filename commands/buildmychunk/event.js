@@ -16,6 +16,7 @@ module.exports = {
 					fr: "Nom de l'évenement (ex: buildmychunk-YYYY-MM) ?",
 				})
         .setRequired(true)),
+
   async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
 

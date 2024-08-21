@@ -16,6 +16,7 @@ module.exports = {
 		.setDescriptionLocalizations({
 			fr: 'Affiche les informations du serveur',
 		}),
+
 	async execute(interaction) {
 		await interaction.reply({ embeds: [embed] });
 	},

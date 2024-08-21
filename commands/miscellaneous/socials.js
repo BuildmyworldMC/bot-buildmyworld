@@ -20,6 +20,7 @@ module.exports = {
 		.setDescriptionLocalizations({
 			fr: 'Affiche les reseaux du projet',
 		}),
+
 	async execute(interaction) {
 		await interaction.reply({ embeds: [embed] });
 	},

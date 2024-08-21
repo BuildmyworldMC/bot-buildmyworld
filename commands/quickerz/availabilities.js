@@ -68,6 +68,7 @@ module.exports = {
 					fr: 'Heure affiche pour la fin de semaine',
 				})
 				.setRequired(true)),
+
 	async execute(interaction) {
 		let weekEnabled = interaction.options.getBoolean('weekenabled');
 		let weekendEnabled = interaction.options.getBoolean('weekendenabled');

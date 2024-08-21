@@ -18,6 +18,7 @@ module.exports = {
 					fr: "Nom de l'évenement (ex: Buildmychunk Mars 2023) ?",
 				})
         .setRequired(true)),
+
   	async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
 		await interaction.reply(`----------------------------------------------------------------------------------------------

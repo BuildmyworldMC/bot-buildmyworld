@@ -24,6 +24,7 @@ module.exports = {
 						fr: 'Nom du participant ?',
 					})
 					.setRequired(true)),
+
 	async execute(interaction) {
 		let eventName = interaction.options.getString('eventname');
 		let participantName = interaction.options.getString('participantname');

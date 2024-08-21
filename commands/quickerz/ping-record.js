@@ -12,6 +12,7 @@ module.exports = {
 		.setDescriptionLocalizations({
 			fr: "Affiche un message indiquant le début d'un tournage aux Quickerz et Batiesseurs",
 		}),
+
 	async execute(interaction) {
 		const quickerzRoleId = '668240840556019741';
 		const builderRoleId = '321732484398055435';
