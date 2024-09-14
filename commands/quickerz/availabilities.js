@@ -78,7 +78,8 @@ module.exports = {
 
 		let computedMessage = computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime);
 
-		const message = await interaction.reply({ content: computedMessage, fetchReply: true });
+		await interaction.deferReply();
+		const message = await interaction.editReply({ content: computedMessage, fetchReply: true });
 		logger.log('info', `Availabilities has displayed (trace: ${computedMessage})`);
 
 		try {
