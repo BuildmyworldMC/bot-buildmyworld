@@ -18,6 +18,6 @@ module.exports = {
 		const builderRoleId = '321732484398055435';
 		const apprenticeBuilderRoleId = '807391085638189147';
 
-		await interaction.reply(`<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> Un tournage commence !`);
+		await interaction.reply(`<@&${quickerzRoleId}> <@&${builderRoleId}> <@&${apprenticeBuilderRoleId}> 🔔 Un tournage commence ! 🔔`);
 	},
 };
