@@ -1,5 +1,13 @@
 # Changelog
 
+v2.5.5
+------
+- Updated: Added icons in ping record message on use /ping-record command
+- Updated: Update all dependencies
+- Updated: Improve code reading in all commands files
+- Fixed: Unknowns interactions on use availabilities and vote commands
+
+
 v2.5.4
 ------
 - Updated: Remove Utip in `/socials` because this project is end
