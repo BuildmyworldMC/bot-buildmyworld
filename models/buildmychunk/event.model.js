@@ -12,13 +12,13 @@ module.exports = class BuildmychunkEvent {
     }
 
     participations.sort((firstParticipation, secondParticipation) => {
-			return secondParticipation.score > firstParticipation.score ? 1 : -1;
+			return secondParticipation.score > firstParticipation.score ? 1 : -1;
 		});
 
 		let positionIndex = 1;
 		let previousScore = participations[0].score;
 
-		participations.forEach((participation, index) => {
+		participations.forEach((participation) => {
 			if (participation.score < previousScore) {
 				previousScore = participation.score;
 				positionIndex++;
@@ -30,7 +30,7 @@ module.exports = class BuildmychunkEvent {
     let result = `Résultat de l'événement ${this.title}`;
 
     participations.forEach((participation) => {
-      result += `\n${participation.getPositionEmoji()} ${participation.name} : ${participation.score} point${participation.score > 1 ? 's' : ''}`;
+      result += `\n${participation.getPositionEmoji()} ${participation.name} : ${participation.score} point${participation.score > 1 ? 's' : ''}`;
     });
 
     return result;
