@@ -1,5 +1,13 @@
 # Changelog
 
+v2.6.0
+------
+- Added: Command `/wiki` to display project wiki for lore
+- Updated: Improve `/server` command message for update supported versions and add server page link in website
+- Updated: Review typo in many commands for cleanup
+- Fixed: invalid command name for restrict `/ping-record` command usage to specific access level
+
+
 v2.5.5
 ------
 - Updated: Added icons in ping record message on use /ping-record command
