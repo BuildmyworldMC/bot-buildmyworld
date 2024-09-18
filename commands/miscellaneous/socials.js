@@ -14,11 +14,11 @@ module.exports = {
 	data: new SlashCommandBuilder()
 		.setName('socials')
 		.setNameLocalizations({
-			fr: 'resaux',
+			fr: 'reseaux',
 		})
 		.setDescription('Displays project networks')
 		.setDescriptionLocalizations({
-			fr: 'Affiche les reseaux du projet',
+			fr: 'Affiche les réseaux du projet',
 		}),
 
 	async execute(interaction) {
