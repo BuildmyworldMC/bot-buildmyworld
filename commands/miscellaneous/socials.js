@@ -2,7 +2,7 @@ const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
 
 const embed = new EmbedBuilder()
 	.setColor(0x17a2b8)
-	.setTitle('Reseaux du projet')
+	.setTitle('Réseaux du projet')
 	.setDescription(`:link: Discord : https://discord.gg/taCzCMe
 		:link: Site web : https://buildmyworld.fr/
 		:link: Youtube : https://www.youtube.com/channel/UCJxUW2ac4Kf7DWK9puSqBqg

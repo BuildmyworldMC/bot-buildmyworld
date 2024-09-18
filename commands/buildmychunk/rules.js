@@ -8,7 +8,7 @@ module.exports = {
 		})
 		.setDescription('Displays system rules for events')
 		.setDescriptionLocalizations({
-			fr: 'Affiche les regles du système pour les événements',
+			fr: 'Affiche les régles du système pour les événements',
 		}),
 
 	async execute(interaction) {

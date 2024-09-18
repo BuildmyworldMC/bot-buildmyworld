@@ -8,7 +8,7 @@ module.exports = {
 		.setName('vote')
 		.setDescription('Create a participation and display the voting system')
 		.setDescriptionLocalizations({
-			fr: 'Crée une participation et affiche le systeme de vote',
+			fr: 'Crée une participation et affiche le système de vote',
 		})
 		.addStringOption(option =>
 			option.setName('eventname')
