@@ -1,5 +1,11 @@
 # Changelog
 
+v2.6.1
+------
+- Updated: Migrate Yarn to NPM for use audit fix module
+- Updated: Update all dependencies
+
+
 v2.6.0
 ------
 - Added: Command `/wiki` to display project wiki for lore
