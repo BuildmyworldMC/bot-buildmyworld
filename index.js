@@ -9,6 +9,14 @@ const env = dotenv.config().parsed;
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
+client.on('error', (error) => {
+	logger.log('error', 'Discord client error:', error);
+});
+
+client.on('shardError', (error) => {
+	logger.log('error', 'A websocket connection encountered an error:', error);
+});
+
 // Register commands
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
