@@ -1,4 +1,4 @@
-module.exports = class BuildmychunkParticipation {
+export default class BuildmychunkParticipation {
 	static onePointReaction = '1️⃣';
 	static twoPointsReaction = '2️⃣';
 	static threePointsReaction = '3️⃣';
@@ -13,19 +13,36 @@ module.exports = class BuildmychunkParticipation {
 	}
 
 	async refreshMessage(client) {
-		this.srcMessage = await client.channels.cache.get(this.srcMessage.channelId).messages.fetch(this.srcMessage.id);
+		this.srcMessage = await client.channels.cache.get(this.srcMessage.channelId).messages.fetch(this.srcMessage.id, { force: true });
 	}
 
 	async computeScore(client) {
+		const excludeBotReactions = 1;
 		let score = 0;
 
 		await this.refreshMessage(client);
 
-		score += this.srcMessage.reactions.cache.get(BuildmychunkParticipation.onePointReaction).count - 1; // - 1 for exclude bot reaction
-		score += (this.srcMessage.reactions.cache.get(BuildmychunkParticipation.twoPointsReaction).count - 1) * 2; // * <number> for applied value of reaction in calculation
-		score += (this.srcMessage.reactions.cache.get(BuildmychunkParticipation.threePointsReaction).count - 1) * 3;
-		score += (this.srcMessage.reactions.cache.get(BuildmychunkParticipation.fourPointsReaction).count - 1) * 4;
-		score += (this.srcMessage.reactions.cache.get(BuildmychunkParticipation.fivePointsReaction).count - 1) * 5;
+		// Helper to get fresh reaction count
+		const getReactionCount = async (message, emoji) => {
+			const reaction = message.reactions.cache.get(emoji);
+			if (reaction) {
+				await reaction.fetch();
+				return reaction.count;
+			}
+			return 0;
+		};
+
+		const one = await getReactionCount(this.srcMessage, BuildmychunkParticipation.onePointReaction);
+		const two = await getReactionCount(this.srcMessage, BuildmychunkParticipation.twoPointsReaction);
+		const three = await getReactionCount(this.srcMessage, BuildmychunkParticipation.threePointsReaction);
+		const four = await getReactionCount(this.srcMessage, BuildmychunkParticipation.fourPointsReaction);
+		const five = await getReactionCount(this.srcMessage, BuildmychunkParticipation.fivePointsReaction);
+
+		score += one - excludeBotReactions;
+		score += (two - excludeBotReactions) * 2;
+		score += (three - excludeBotReactions) * 3;
+		score += (four - excludeBotReactions) * 4;
+		score += (five - excludeBotReactions) * 5;
 
 		return score;
 	}

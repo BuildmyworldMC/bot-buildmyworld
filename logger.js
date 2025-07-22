@@ -1,7 +1,7 @@
-const dotenv = require('dotenv');
-const env = dotenv.config().parsed;
+import { config } from 'dotenv';
+const env = config().parsed;
 
-const { createLogger, format, transports } = require('winston');
+import { createLogger, format, transports } from 'winston';
 const { combine, timestamp, prettyPrint } = format;
 
 const logger = createLogger({
@@ -21,4 +21,4 @@ if (env.NODE_ENV !== 'production') {
 	}));
 }
 
-module.exports = logger;
+export default logger;

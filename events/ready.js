@@ -1,13 +1,11 @@
-const logger = require('../logger');
+import logger from '../logger.js';
 
-module.exports = {
-	name: 'ready',
-	once: true,
-	execute(client) {
-		// Init events dictionary
-		client.events = {};
+export const name = 'ready';
+export const once = true;
+export function execute(client) {
+	// Init events dictionary
+	client.events = {};
 
-		logger.log('info', '--------------START--------------');
-		logger.log('info', `Ready! Logged in as ${client.user.tag}`);
-	},
-};
+	logger.info('--------------START--------------');
+	logger.info(`Ready! Logged in as ${client.user.tag}`);
+}

@@ -1,4 +1,4 @@
-const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
+import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
 
 const embed = new EmbedBuilder()
 	.setColor(0x17a2b8)
@@ -10,18 +10,15 @@ const embed = new EmbedBuilder()
 		:link: Facebook : https://www.facebook.com/buildmyworld/
 		:link: Instagram : https://www.instagram.com/teambuildmyworld`);
 
-module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('socials')
-		.setNameLocalizations({
-			fr: 'reseaux',
-		})
-		.setDescription('Displays project networks')
-		.setDescriptionLocalizations({
-			fr: 'Affiche les réseaux du projet',
-		}),
-
-	async execute(interaction) {
-		await interaction.reply({ embeds: [embed] });
-	},
-};
+export const data = new SlashCommandBuilder()
+	.setName('socials')
+	.setNameLocalizations({
+		fr: 'reseaux',
+	})
+	.setDescription('Displays project networks')
+	.setDescriptionLocalizations({
+		fr: 'Affiche les réseaux du projet',
+	});
+export async function execute(interaction) {
+	await interaction.reply({ embeds: [embed] });
+}

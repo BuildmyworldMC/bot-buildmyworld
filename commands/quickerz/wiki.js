@@ -1,4 +1,4 @@
-const { EmbedBuilder, SlashCommandBuilder } = require('discord.js');
+import { EmbedBuilder, SlashCommandBuilder } from 'discord.js';
 
 const embed = new EmbedBuilder()
 	.setColor(0x035f83)
@@ -7,18 +7,15 @@ const embed = new EmbedBuilder()
 	.setURL('https://wiki.buildmyworld.fr/')
 	.setImage('https://buildmyworld.fr/storage/files/shares/news/monthly-updates/2021/2/wiki-buildmyworld.jpg');
 
-module.exports = {
-	data: new SlashCommandBuilder()
-		.setName('wiki')
-		.setNameLocalizations({
-			fr: 'lore',
-		})
-		.setDescription('Display project wiki for lore')
-		.setDescriptionLocalizations({
-			fr: 'Affiche le wiki du project pour le lore',
-		}),
-
-	async execute(interaction) {
-		await interaction.reply({ embeds: [embed] });
-	},
-};
+export const data = new SlashCommandBuilder()
+	.setName('wiki')
+	.setNameLocalizations({
+		fr: 'lore',
+	})
+	.setDescription('Display project wiki for lore')
+	.setDescriptionLocalizations({
+		fr: 'Affiche le wiki du project pour le lore',
+	});
+export async function execute(interaction) {
+	await interaction.reply({ embeds: [embed] });
+}
