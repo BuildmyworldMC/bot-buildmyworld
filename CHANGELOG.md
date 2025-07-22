@@ -1,5 +1,12 @@
 # Changelog
 
+v2.7.0
+------
+- Added: Improve discord client error management and logging
+- Updated: Migrate project from CommonJS to ES module
+- Updated: Update all dependencies
+
+
 v2.6.1
 ------
 - Updated: Migrate Yarn to NPM for use audit fix module
