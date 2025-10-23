@@ -72,11 +72,11 @@ export async function execute(interaction) {
 
 	let computedMessage = computeMessage(weekEnabled, weekendEnabled, weekTime, weekendTime);
 
-	await interaction.deferReply();
-	const message = await interaction.editReply({ content: computedMessage, fetchReply: true });
-	logger.info(`Availabilities has displayed (trace: ${computedMessage})`);
-
 	try {
+		await interaction.deferReply();
+		const message = await interaction.editReply({ content: computedMessage, fetchReply: true });
+		logger.info(`Availabilities has displayed (trace: ${computedMessage})`);
+
 		if (weekEnabled) {
 			await message.react('🇱');
 			await message.react('🇲');
@@ -90,7 +90,18 @@ export async function execute(interaction) {
 			await message.react('🇩');
 		}
 	} catch (error) {
-		logger.error('One of the reaction failed to react:', error);
+		logger.error('Error in availabilities command:', error);
+		
+		if (!interaction.replied && !interaction.deferred) {
+			await interaction.reply({ 
+				content: 'Une erreur est survenue lors de l\'exécution de la commande. Veuillez réessayer plus tard.',
+				ephemeral: true 
+			});
+		} else {
+			await interaction.followUp({ 
+				content: 'Une erreur est survenue lors de l\'ajout des réactions. Veuillez réessayer plus tard.',
+				ephemeral: true 
+			});
+		}
 	}
-
 }
