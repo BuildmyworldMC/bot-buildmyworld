@@ -1,5 +1,5 @@
 import { readdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord.js';
 import { config } from 'dotenv';
@@ -9,7 +9,7 @@ import logger from './logger.js';
 const env = config().parsed;
 
 const commands = [];
-const commandsPath = join(__dirname, 'commands');
+const commandsPath = join(dirname(fileURLToPath(import.meta.url)), 'commands');
 const commandFiles = [];
 
 readdirSync(commandsPath).forEach(folderName => {
