@@ -1,5 +1,12 @@
 # Changelog
 
+v2.8.0
+------
+- Updated: Improve availabilities command error handling
+- Updated: Update all dependencies
+- Fixed: __dirname of undefined in deploy commands code
+
+
 v2.7.0
 ------
 - Added: Improve discord client error management and logging
