@@ -5,8 +5,8 @@ const embed = new EmbedBuilder()
 	.setTitle(`Serveur Minecraft Buildmyworld`)
 	.setDescription(`:link: IP : play.buildmyworld.fr
 					:link: https://buildmyworld.fr/server
-					:jigsaw: Minecraft Java Edition - Versions 1.18 a 1.21
-					:jigsaw: Minecraft Bedrock Edition (PC)- Versions 1.18 a 1.21`);
+					:jigsaw: Minecraft Java Edition - Versions 1.18 a 26.3
+					:jigsaw: Minecraft Bedrock Edition (PC)- Versions 1.18 a 26.30`);
 
 export const data = new SlashCommandBuilder()
 	.setName('server')
