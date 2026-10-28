@@ -41,7 +41,7 @@
 
 Prerequisites to have on your PC
 
-* NodeJS ^20.x
+* NodeJS ^26.x
 * Npm ^10.x
 
 After retrieve prerequisites, see instructions in **Configuration** section and after **Usage**.
