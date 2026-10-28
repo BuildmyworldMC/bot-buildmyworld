@@ -31,11 +31,11 @@
 
 ## Configuration
 
-1. retrieve dependancies with command: `yarn` in console to level of `package.json` file
+1. retrieve dependancies with command: `npm install` in console to level of `package.json` file
 2. Duplicate `.env.example` file for create `.env` file
 3. Add configuration in `.env` file with your discord data (available on discord and https://discord.com/developers) and defined bot env (`local` or `production`)
-4. (*Optional only if commands list changes*) Execute command: `yarn run deploy-commands` in console to level of `package.json`
-5. Execute command: `yarn start` in console to level of `package.json` file
+4. (*Optional only if commands list changes*) Execute command: `npm run deploy-commands` in console to level of `package.json`
+5. Execute command: `npm start` in console to level of `package.json` file
 
 ## For dev
 
