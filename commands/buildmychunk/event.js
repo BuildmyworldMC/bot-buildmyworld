@@ -20,7 +20,11 @@ export async function execute(interaction) {
 
 	if (interaction.client.events[eventName]) {
 		logger.warn(`"${eventName}" event was not overridden because is already exist !`);
-		return; // Prevent event override
+		await interaction.reply({
+			content: `L’événement « ${eventName} » existe déjà.`,
+			ephemeral: true,
+		});
+		return;
 	}
 
 	interaction.client.events[eventName] = new BuildmychunkEvent(eventName);
