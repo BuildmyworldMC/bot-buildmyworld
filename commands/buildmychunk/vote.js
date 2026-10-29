@@ -27,6 +27,10 @@ export async function execute(interaction) {
 
 	if (!interaction.client.events || !interaction.client.events[eventName]) {
 		logger.warn(`No event exist or "${eventName}" event not exist !`);
+		await interaction.reply({
+			content: `L’événement « ${eventName} » n’existe pas.`,
+			ephemeral: true,
+		});
 		return;
 	}
 
