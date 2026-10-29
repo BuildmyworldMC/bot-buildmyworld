@@ -1,5 +1,9 @@
 import { SlashCommandBuilder } from 'discord.js';
 
+import {
+	UNKNOWN_INTERACTION_ERROR_CODE,
+	INTERACTION_HAS_ALREADY_BEEN_ACKNOWLEDGED_ERROR_CODE,
+} from '../../constants.js';
 import logger from '../../logger.js';
 
 function computeFrTime(time) {
@@ -91,7 +95,12 @@ export async function execute(interaction) {
 		}
 	} catch (error) {
 		logger.error('Error in availabilities command:', error);
-		
+
+		if (error.code === UNKNOWN_INTERACTION_ERROR_CODE ||
+			error.code === INTERACTION_HAS_ALREADY_BEEN_ACKNOWLEDGED_ERROR_CODE) {
+			return;
+		}
+
 		if (!interaction.replied && !interaction.deferred) {
 			await interaction.reply({ 
 				content: 'Une erreur est survenue lors de l\'exécution de la commande. Veuillez réessayer plus tard.',

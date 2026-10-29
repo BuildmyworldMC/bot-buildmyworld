@@ -19,7 +19,7 @@ client.on('shardError', (error) => {
 	logger.error('A websocket connection encountered an error:', error);
 });
 
-(async () => {
+async function startBot() {
 	// Register commands
 	client.commands = new Collection();
 	const commandsPath = join(absoluteCurrentDirectoryPath, 'commands');
@@ -50,12 +50,25 @@ client.on('shardError', (error) => {
 		const fileUrl = pathToFileURL(filePath).href;
 		const eventModule = await import(fileUrl);
 		const event = eventModule.default || eventModule;
+		const executeEvent = async (...args) => {
+			try {
+				await event.execute(...args);
+			} catch (error) {
+				logger.error(`Event ${event.name} execution failed`, { error });
+			}
+		};
+
 		if (event.once) {
-			client.once(event.name, (...args) => event.execute(...args));
+			client.once(event.name, executeEvent);
 		} else {
-			client.on(event.name, (...args) => event.execute(...args));
+			client.on(event.name, executeEvent);
 		}
 	}
 
-	client.login(env.BOT_TOKEN);
-})();
+	await client.login(env.BOT_TOKEN);
+}
+
+startBot().catch(error => {
+	logger.error('Bot startup failed', { error });
+	process.exitCode = 1;
+});
