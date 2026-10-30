@@ -13,36 +13,32 @@ export default class BuildmychunkParticipation {
 	}
 
 	async refreshMessage(client) {
-		this.srcMessage = await client.channels.cache.get(this.srcMessage.channelId).messages.fetch(this.srcMessage.id, { force: true });
+		this.srcMessage = await client.channels.cache.get(this.srcMessage.channelId).messages.fetch({ message: this.srcMessage.id, force: true });
 	}
 
 	async computeScore(client) {
-		const excludeBotReactions = 1;
 		let score = 0;
 
 		await this.refreshMessage(client);
 
-		// Helper to get fresh reaction count
-		const getReactionCount = async (message, emoji) => {
+		const getReactionCount = (message, emoji) => {
 			const reaction = message.reactions.cache.get(emoji);
-			if (reaction) {
-				await reaction.fetch();
-				return reaction.count;
-			}
-			return 0;
+			if (!reaction) return 0;
+
+			return Math.max(0, (reaction.count ?? 0) - Number(reaction.me));
 		};
 
-		const one = await getReactionCount(this.srcMessage, BuildmychunkParticipation.onePointReaction);
-		const two = await getReactionCount(this.srcMessage, BuildmychunkParticipation.twoPointsReaction);
-		const three = await getReactionCount(this.srcMessage, BuildmychunkParticipation.threePointsReaction);
-		const four = await getReactionCount(this.srcMessage, BuildmychunkParticipation.fourPointsReaction);
-		const five = await getReactionCount(this.srcMessage, BuildmychunkParticipation.fivePointsReaction);
+		const one = getReactionCount(this.srcMessage, BuildmychunkParticipation.onePointReaction);
+		const two = getReactionCount(this.srcMessage, BuildmychunkParticipation.twoPointsReaction);
+		const three = getReactionCount(this.srcMessage, BuildmychunkParticipation.threePointsReaction);
+		const four = getReactionCount(this.srcMessage, BuildmychunkParticipation.fourPointsReaction);
+		const five = getReactionCount(this.srcMessage, BuildmychunkParticipation.fivePointsReaction);
 
-		score += one - excludeBotReactions;
-		score += (two - excludeBotReactions) * 2;
-		score += (three - excludeBotReactions) * 3;
-		score += (four - excludeBotReactions) * 4;
-		score += (five - excludeBotReactions) * 5;
+		score += one;
+		score += two * 2;
+		score += three * 3;
+		score += four * 4;
+		score += five * 5;
 
 		return score;
 	}
