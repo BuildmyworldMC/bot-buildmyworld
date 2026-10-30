@@ -1,5 +1,18 @@
 # Changelog
 
+v2.9.0
+------
+- Updated: Update NodeJS minimal version required (^20 to ^26)
+- Updated: Update all dependencies
+- Updated: Event `ready` is deprecated, used `clientReady` now
+- Updated: Update project version to 26.3 (java) and 26.30 (bedrock) in `/server` command
+- Updated: Improve events commands to handle not existing event 
+- Fixed: Many random crash on use commands
+- Fixed: Invalid reactions count used to compute event result on use `/result` command
+- Fixed: Deploy command script is outdated
+- Fixed: Yarn commands is already displayed in readme (npm used now)
+
+
 v2.8.0
 ------
 - Updated: Improve availabilities command error handling
